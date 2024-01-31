@@ -10,23 +10,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="description" content="Tableau de bord - Étudiants">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.icon">
 
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/vendors/jqvmap/dist/jqvmap.min.css">
     @yield("css")
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -35,7 +34,7 @@
 
     <!-- Left Panel -->
 
-    @include('template.aside')
+    @include('internship.dashboard.aside')
     
     <!-- /#left-panel -->
 
@@ -91,7 +90,7 @@
                 <div class="dropdown-menu" aria-labelledby="message">
                     <p class="red">You have 4 Mails</p>
                     <a class="dropdown-item media bg-flat-color-1" href="#">
-                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
+                    <span class="photo media-left"><img alt="avatar" src="/images/avatar/1.jpg"></span>
                     <span class="message media-body">
                         <span class="name float-left">Jonathan Smith</span>
                         <span class="time float-right">Just now</span>
@@ -99,7 +98,7 @@
                     </span>
                 </a>
                     <a class="dropdown-item media bg-flat-color-4" href="#">
-                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
+                    <span class="photo media-left"><img alt="avatar" src="/images/avatar/2.jpg"></span>
                     <span class="message media-body">
                         <span class="name float-left">Jack Sanders</span>
                         <span class="time float-right">5 minutes ago</span>
@@ -130,7 +129,7 @@
     <div class="col-sm-5">
         <div class="user-area dropdown float-right">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                <img class="user-avatar rounded-circle" src="/images/admin.jpg" alt="User Avatar">
             </a>
 
             <div class="user-menu dropdown-menu">
@@ -212,19 +211,18 @@
 
     </div><!-- /#right-panel -->
 
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
-    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+
+    <script src="/vendors/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/widgets.js"></script>
+    <script src="/vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
     <script>
         (function($) {
             "use strict";

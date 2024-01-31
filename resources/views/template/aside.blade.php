@@ -19,27 +19,27 @@
 
                     <h3 class="menu-title">Étudiants</h3><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
+                        <a href="/etudiant/connexion"> <i class="menu-icon fa fa-laptop"></i>Se connecter</a>
+                        <a href="/etudiant/inscription"> <i class="menu-icon fa fa-laptop"></i>S'inscrire</a>
                     </li>
                 
                     <h3 class="menu-title">Tuteurs</h3><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
+                        <a href="/tuteur/connexion"> <i class="menu-icon fa fa-laptop"></i>Se connecter</a>
+                        <a href="/tuteur/inscription"> <i class="menu-icon fa fa-laptop"></i>S'inscrire</a>
                     </li>
                     
                     <h3 class="menu-title">Service Stage et Emploi</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                    <li class="menu-item">
+                        <a href="/internship/connexion"> <i class="menu-icon fa fa-laptop"></i>Se connecter</a>
+                        <a href="/internship/inscription"> <i class="menu-icon fa fa-laptop"></i>S'inscrire</a>
                     </li>
 
-                    <h3 class="menu-title">Pédagogie</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                    </li>
+                     <h3 class="menu-title">Pédagogie</h3><!-- /.menu-title -->
+                    <li class="menu-item">
+                        <a href="/pedagogie/connexion"> <i class="menu-icon fa fa-laptop"></i>Se connecter</a>
+                        <a href="/pedagogie/inscription"> <i class="menu-icon fa fa-laptop"></i>S'inscrire</a>
+                    </li> 
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

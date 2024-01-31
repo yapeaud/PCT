@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    YHello
+    <h1 class="text-center">Hello, world!</h1>
 @endsection
