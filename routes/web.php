@@ -28,9 +28,13 @@ Route::post('/etudiant/inscription', [EtudiantController::class,'traitementInscr
 Route::get('/etudiant/liste', [EtudiantController::class, 'listeEtudiant'])->name('listeEtudiant');
 Route::get('/etudiant/dashboard', [EtudiantController::class, 'etudiantDasboard'])->name('etudiantDasboard');
 Route::get('/etudiant/dashboard/evaluation/membre', [EtudiantController::class, 'etudiantEvaluationMembre'])->name('etudiantEvaluationMembre');
+Route::post('/etudiant/dashboard/evaluation/membre', [EtudiantController::class, 'traitementEtudiantEvaluationMembre'])->name('traitementEtudiantEvaluationMembre');
 Route::get('/etudiant/dashboard/evaluation/tuteur', [EtudiantController::class, 'etudiantEvaluationTuteur'])->name('etudiantEvaluationTuteur');
+Route::post('/etudiant/dashboard/evaluation/tuteur', [EtudiantController::class, 'traitementEtudiantEvaluationTuteur'])->name('traitementEtudiantEvaluationTuteur');
 Route::get('/etudiant/dashboard/rapport', [EtudiantController::class, 'etudiantRapport'])->name('etudiantRapport');
+Route::post('/etudiant/dashboard/rapport', [EtudiantController::class, 'traitementEtudiantRapport'])->name('traitementEtudiantRapport');
 Route::get('/etudiant/dashboard/livrable', [EtudiantController::class, 'etudiantLivrable'])->name('etudiantLivrable');
+Route::post('/etudiant/dashboard/livrable', [EtudiantController::class, 'traitementEtudiantLivrable'])->name('traitementEtudiantLivrable');
 
 
 /* ---------- TUTEURS ----------- */
@@ -39,10 +43,16 @@ Route::get('/tuteur/inscription', [TuteurController::class,'inscription'])->name
 Route::post('/tuteur/inscription', [TuteurController::class,'traitementInscriptionTuteur'])->name('traitementInscriptionTuteur');
 Route::get('/tuteur/liste', [TuteurController::class, 'listeTuteur'])->name('listeTiteur');
 Route::get('/tuteur/dashboard', [TuteurController::class, 'tuteurDasboard'])->name('tuteurDasboard');
-Route::get('/tuteur/dashboard/evaluation/etudiant', [TuteurController::class, 'tuteurEvaluationEtudiant'])->name('tuteurEvaluationEtudiant');
+Route::get('/tuteur/dashboard/evaluation/etudiant', [TuteurController::class, 'tuteurEvalueEtudiant'])->name('tuteurEvalueEtudiant');
+Route::post('/tuteur/dashboard/evaluation/etudiant', [TuteurController::class, 'traitementTuteurEvalueEtudiant'])->name('traitementTuteurEvalueEtudiant');
 Route::get('/tuteur/dashboard/groupe', [TuteurController::class, 'tuteurCreeGroupe'])->name('tuteurCreeGroupe');
-Route::get('/tuteur/dashboard/rapport', [TuteurController::class, 'tuteurRapport'])->name('tuteurRapport');
+Route::post('/tuteur/dashboard/groupe', [TuteurController::class, 'traitementTuteurCreeGroupe'])->name('traitementTuteurCreeGroupe');
+
 Route::get('/tuteur/dashboard/groupe/role', [TuteurController::class, 'tuteurAttribueRole'])->name('tuteurAttribueRole');
+
+
+Route::get('/tuteur/dashboard/rapport', [TuteurController::class, 'tuteurRapport'])->name('tuteurRapport');
+
 
 /* ---------- RESPONSABLE DU SERVICE STAGE ET EMPLOI ----------- */
 Route::get('/internship/connexion', [InternshipController::class, 'index'])->name('connexion');
