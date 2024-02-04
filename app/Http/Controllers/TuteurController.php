@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tuteur;
 use Illuminate\Http\Request;
 use App\Models\TuteurCreeGroupe;
+use App\Models\TuteurAttribueRole;
 use App\Models\TuteurEvalueEtudiant;
 use Illuminate\Support\Facades\Hash;
 
@@ -77,7 +78,7 @@ class TuteurController extends Controller
   public function tuteurCreeGroupe()
   {
     $tuteur_cree_groupes = TuteurCreeGroupe::all();
-    return view('tuteur.groupe');
+    return view('tuteur.groupe', compact('tuteur_cree_groupes'));
   }
 
   public function traitementTuteurCreeGroupe(Request $request)
@@ -101,17 +102,33 @@ class TuteurController extends Controller
 
   public function tuteurAttribueRole()
   {
-    return view('tuteur.role');
+    $tuteur_attribue_roles = TuteurAttribueRole::all();
+    return view('tuteur.role', compact('tuteur_attribue_roles'));
   }
 
+  public function traitementTuteurAttribueRole(Request $request)
+  {
+    // Validation des données
+    $request->validate([
+      'groupname' => 'required|string|max:255',
+      'studentname' => 'required|string|max:255',
+      'assignedrole' => 'required|string|max:255',
+    ]);
 
-
-
-
-
+    $tuteur_attribue_role = new TuteurAttribueRole;
+    $tuteur_attribue_role->nom_du_groupe = $request->input('groupname');
+    $tuteur_attribue_role->etudiant = $request->input('studentname');
+    $tuteur_attribue_role->role_attribue = $request->input('assignedrole');
+    $tuteur_attribue_role->save();
+    return back()->with("successAdd", 'Rôle enregistré avec succès.');
+  }
 
   public function tuteurRapport()
   {
     return view('tuteur.rapport');
+  }
+  public function traitementTuteurRapport()
+  {
+    
   }
 }
