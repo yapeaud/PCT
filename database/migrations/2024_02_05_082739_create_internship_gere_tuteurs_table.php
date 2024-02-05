@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('contact');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('specialite');
             $table->timestamps();
         });
