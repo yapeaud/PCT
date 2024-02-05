@@ -49,8 +49,6 @@ Route::get('/tuteur/dashboard/groupe', [TuteurController::class, 'tuteurCreeGrou
 Route::post('/tuteur/dashboard/groupe', [TuteurController::class, 'traitementTuteurCreeGroupe'])->name('traitementTuteurCreeGroupe');
 Route::get('/tuteur/dashboard/groupe/role', [TuteurController::class, 'tuteurAttribueRole'])->name('tuteurAttribueRole');
 Route::post('/tuteur/dashboard/groupe/role', [TuteurController::class, 'traitementTuteurAttribueRole'])->name('traitementTuteurAttribueRole');
-
-
 Route::get('/tuteur/dashboard/rapport', [TuteurController::class, 'tuteurRapport'])->name('tuteurRapport');
 Route::post('/tuteur/dashboard/rapport', [TuteurController::class, 'traitementTuteurRapport'])->name('traitementTuteurRapport');
 
@@ -61,7 +59,12 @@ Route::get('/internship/inscription', [InternshipController::class,'inscription'
 Route::post('/internship/inscription', [InternshipController::class,'traitementInscriptionInternship'])->name('traitementInscriptionInternship');
 Route::get('/internship/liste', [InternshipController::class, 'listeInternship'])->name('listeInternship');
 Route::get('/internship/dashboard', [InternshipController::class, 'internshipDashboard'])->name('internshiDashboard');
+
 Route::get('/internship/dashboard/gere', [InternshipController::class, 'internshipGereTuteur'])->name('internshipGereTuteur');
+Route::post('/internship/dashboard/gere', [InternshipController::class, 'traitementInternshipGereTuteur'])->name('traitementInternshipGereTuteur');
+
+
+
 Route::get('/internship/dashboard/attribue', [InternshipController::class, 'internshipAttribueEtudiant'])->name('internshipAttribueEtudiant');
 Route::get('/internship/dashboard/note', [InternshipController::class, 'internshipNoteTuteur'])->name('internshipNoteTuteur');
 
