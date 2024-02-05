@@ -59,17 +59,13 @@ Route::get('/internship/inscription', [InternshipController::class,'inscription'
 Route::post('/internship/inscription', [InternshipController::class,'traitementInscriptionInternship'])->name('traitementInscriptionInternship');
 Route::get('/internship/liste', [InternshipController::class, 'listeInternship'])->name('listeInternship');
 Route::get('/internship/dashboard', [InternshipController::class, 'internshipDashboard'])->name('internshiDashboard');
-
 Route::get('/internship/dashboard/note', [InternshipController::class, 'internshipNoteTuteur'])->name('internshipNoteTuteur');
 Route::post('/internship/dashboard/note', [InternshipController::class, 'traitementInternshipNoteTuteur'])->name('traitementInternshipNoteTuteur');
-
-
 Route::get('/internship/dashboard/gere', [InternshipController::class, 'internshipGereTuteur'])->name('internshipGereTuteur');
 Route::post('/internship/dashboard/gere', [InternshipController::class, 'traitementInternshipGereTuteur'])->name('traitementInternshipGereTuteur');
 
-
-
 Route::get('/internship/dashboard/attribue', [InternshipController::class, 'internshipAttribueEtudiant'])->name('internshipAttribueEtudiant');
+Route::post('/internship/dashboard/attribue', [InternshipController::class, 'traitementInternshipAttribueEtudiant'])->name('traitementInternshipAttribueEtudiant');
 
 
 /* ---------- RESPONSABLE DE LA PÉDAGOGIE ----------- */
