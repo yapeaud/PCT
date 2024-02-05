@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tuteur;
 use Illuminate\Http\Request;
+use App\Models\TuteurRapport;
 use App\Models\TuteurCreeGroupe;
 use App\Models\TuteurAttribueRole;
 use App\Models\TuteurEvalueEtudiant;
@@ -125,10 +126,27 @@ class TuteurController extends Controller
 
   public function tuteurRapport()
   {
-    return view('tuteur.rapport');
+    $tuteur_rapports = TuteurRapport::all();
+    return view('tuteur.rapport', compact('tuteur_rapports'));
   }
-  public function traitementTuteurRapport()
+  public function traitementTuteurRapport(Request $request)
   {
+    $request->validate([
+      'title' => 'required|string|max:255',
+      'file' => 'required|mimes:docx,xlsx,pptx,pdf|max:10000000'
+    ]);
+
+    $title = $request->input('title');
+    $file = $request->file('file');
     
+    $fileName = $title . '_' . time() . '.' . $file->getClientOriginalExtension();
+   
+    $path = $file->storeAs('uploads', $fileName);
+
+    $tuteur_rapport = new TuteurRapport;
+    $tuteur_rapport->nom_du_rapport = $request->input('title');
+    $tuteur_rapport->file = $request->input('file');
+
+    return back()->with("successAdd", 'Votre rapport a été déposé avec succès.');
   }
 }
