@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Internship;
 use Illuminate\Http\Request;
 use App\Models\InternshipGereTuteur;
+use App\Models\InternshipNoteTuteur;
 use Illuminate\Support\Facades\Hash;
 
 class InternshipController extends Controller
@@ -53,7 +54,24 @@ class InternshipController extends Controller
 
   public function internshipNoteTuteur()
   {
-    return view('internship.note');
+    $internship_gere_tuteurs = InternshipNoteTuteur::all();
+    return view('internship.note', compact('internship_gere_tuteurs'));
+  }
+
+  public function traitementInternshipNoteTuteur(Request $request)
+  {
+     // Validation des données
+     $request->validate([
+      'nom' => 'required|string|max:255',
+      'note' => 'required|string|max:255',
+    ]);
+
+    $internship_note_tuteur = New InternshipNoteTuteur;
+    $internship_note_tuteur->nom_du_tuteur = $request->input('nom');
+    $internship_note_tuteur->note_du_tuteur = $request->input('note');
+    $internship_note_tuteur->save();
+    return back()->with("successAdd", "Soumission reçue! !");
+
   }
 
   public function internshipGereTuteur()
@@ -82,14 +100,6 @@ class InternshipController extends Controller
     $internship_gere_tuteur->save();
     return back()->with("successAdd", "Soumission reçue!");
   }
-
-
-
-
-
-
-
- 
 
   public function internshipAttribueEtudiant()
   {
