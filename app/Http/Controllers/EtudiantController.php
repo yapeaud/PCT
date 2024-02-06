@@ -64,13 +64,11 @@ class EtudiantController extends Controller
   {
     $request->validate([
       'nom' => 'required|string|max:255',
-      'prenom' => 'required|string|max:255',
       'note' => 'required|string|max:20',
     ]);
 
     $evaluer_membre = new EvaluerMembre;
     $evaluer_membre->nom = $request->input('nom');
-    $evaluer_membre->prenom = $request->input('prenom');
     $evaluer_membre->note = $request->input('note');
     $evaluer_membre->save();
     return back()->with("successAdd", 'Note enregistrée avec succès.');
