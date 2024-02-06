@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center">Le tableau de bord du tuteur</h1>
+    <h3 class="text-center">Le tableau de bord du tuteur</h3>
 @endsection

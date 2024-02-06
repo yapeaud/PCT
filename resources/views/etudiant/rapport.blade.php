@@ -5,25 +5,26 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center">Je dépose mon rapport</h1>
-    <form action="/etudiant/dashboard/rapport" method="post" enctype="multipart/form-data">
-        @if(session()->has('successAdd'))
-        <div class="alert alert-success mb-4">
-            <h4>{{ session()->get('successAdd') }}</h4>
-        </div>
-        @endif
-    
-        @if(session()->has('successDelete'))
-        <div class="alert alert-success mb-4">
-            <h4>{{ session()->get('successDelete') }}</h4>
-        </div>
-        @endif
-        @csrf
-        <label for="title">Le nom du rapport</label>
-        <input type="text" name="title" id="title" required>
+    <main class="container mt-5">
+        <section class="row justify-content-center">
+            <article class="col-md-6">
+                <h3 class="text-center">Dépôt du rapport</h3>
+                <form action="/etudiant/dashboard/rapport" method="post" enctype="multipart/form-data">
+                    @csrf
 
-        <label for="file">Sélectionnez un fichier :</label>
-        <input type="file" name="file" accept=".docx, .xlsx, .pptx, .pdf">
-        <button type="submit">Déposer</button>
-    </form>
+                    <div class="form-group mt-3">
+                        <label for="title">Le nom du rapport</label>
+                        <input type="text" name="title" id="title" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file">Sélectionnez un fichier :</label>
+                        <input type="file" name="file" class="form-control-file" accept=".docx, .xlsx, .pptx, .pdf">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Déposer le rapport</button>
+                </form>
+            </article>
+        </section>
+    <main>
 @endsection

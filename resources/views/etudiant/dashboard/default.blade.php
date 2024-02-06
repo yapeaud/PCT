@@ -201,10 +201,11 @@
             </div>
         </div>
 
-        <div class="col-sm-6 col-lg-3">
+        {{-- <div class="col-sm-6 col-lg-3">
 
-             @yield('content')
-        </div>
+             
+        </div> --}}
+        @yield('content')
 
     </div>
 

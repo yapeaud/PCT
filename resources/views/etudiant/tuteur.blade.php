@@ -5,38 +5,46 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center">J'évalue mon tuteur</h1>
-    <form action="/etudiant/dashboard/evaluation/tuteur" method="post">
+    <main class="container mt-5">
+        <section class="row justify-content-center">
+            <article class="col-md-6">
+                <h3 class="text-center">J'évalue mon tuteur</h3>
+                <form action="/etudiant/dashboard/evaluation/tuteur" method="post">
 
-        @if(session()->has('successAdd'))
-        <div class="alert alert-success mb-4">
-            <h4>{{ session()->get('successAdd') }}</h4>
-        </div>
-        @endif
+                    @if (session()->has('successAdd'))
+                        <div class="alert alert-success mb-4">
+                            <h4>{{ session()->get('successAdd') }}</h4>
+                        </div>
+                    @endif
+
+                    @if (session()->has('successDelete'))
+                        <div class="alert alert-success mb-4">
+                            <h4>{{ session()->get('successDelete') }}</h4>
+                        </div>
+                    @endif
+
+                    @csrf
+                    <form action="/etudiant/dashboard/evaluation/tuteur" method="post">
+                        @csrf
     
-        @if(session()->has('successDelete'))
-        <div class="alert alert-success mb-4">
-            <h4>{{ session()->get('successDelete') }}</h4>
-        </div>
-        @endif
+                        <div class="form-group mt-3">
+                            <label for="nom">Nom :</label>
+                            <input type="text" name="nom" class="form-control" required>
+                        </div>
     
-        @csrf
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" required>
+                        <div class="form-group">
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" class="form-control" required>
+                        </div>
     
-        <br>
+                        <div class="form-group">
+                            <label for="note">Note :</label>
+                            <input type="number" name="note" class="form-control" required>
+                        </div>
     
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" required>
-    
-        <br>
-    
-        <label for="note">Note :</label>
-        <input type="number" name="note" required>
-    
-        <br>
-    
-        <button type="submit">Soumettre</button>
-    </form>
-    
-@endsection
+                        <button type="submit" class="btn btn-primary">Enregistrer l'évaluation</button>
+                    </form>
+            </article>
+        </section>
+        <main>
+        @endsection
