@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center">Le tableau de bord du Responsable du Service Stage et Emploi</h1>
+    <h3 class="text-center">Le tableau de bord du Responsable du Service Stage et Emploi</h3>
 @endsection
