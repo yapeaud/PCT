@@ -122,7 +122,7 @@ class EtudiantController extends Controller
   public function etudiantLivrable()
   {
     $etudiant_rapports = EtudiantLivrable::all();
-    return view('etudiant.livrable',);
+    return view('etudiant.livrable', compact('etudiant_rapports'));
   }
   public function traitementEtudiantLivrable(Request $request)
   {
