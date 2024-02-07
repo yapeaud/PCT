@@ -40,7 +40,7 @@ class EtudiantController extends Controller
     $etudiant->email = $request->input('email');
     $etudiant->mot_de_passe  = Hash::make($request->input('mdp'));
     $etudiant->save();
-    return back()->with("successAdd", "L'etudiant a été ajouté avec succès !");
+    return back()->with("successAdd", "Inscription reçue.");
   }
 
   public function listeEtudiant()
@@ -56,21 +56,23 @@ class EtudiantController extends Controller
 
   public function etudiantEvaluationMembre()
   {
-    $evaluer_membres = EvaluerMembre::all();
-    return view('etudiant.membre', compact('evaluer_membres'));
+    $etudiant_evalue_membres = EvaluerMembre::all();
+    return view('etudiant.membre', compact('etudiant_evalue_membres'));
   }
 
   public function traitementEtudiantEvaluationMembre(Request $request)
   {
     $request->validate([
       'nom' => 'required|string|max:255',
+      'specialite' => 'required|string|max:255',
       'note' => 'required|string|max:20',
     ]);
 
-    $evaluer_membre = new EvaluerMembre;
-    $evaluer_membre->nom = $request->input('nom');
-    $evaluer_membre->note = $request->input('note');
-    $evaluer_membre->save();
+    $etudiant_evalue_membre = new EvaluerMembre;
+    $etudiant_evalue_membre->nom = $request->input('nom');
+    $etudiant_evalue_membre->specialite = $request->input('specialite');
+    $etudiant_evalue_membre->note = $request->input('note');
+    $etudiant_evalue_membre->save();
     return back()->with("successAdd", 'Note enregistrée avec succès.');
   }
 

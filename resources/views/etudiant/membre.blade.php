@@ -31,6 +31,11 @@
                     <label for="nom">Entrez le nom et prénoms de l'étudiant</label>
                     <input type="text" class="form-control" name="nom" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="specialite">Spécialité</label>
+                    <input type="text" class="form-control" name="specialite" required>
+                </div>
                 
                 <div class="form-group">
                     <label for="note">Note :</label>
